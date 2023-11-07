@@ -11,7 +11,7 @@ console.log(usedate);
         else{tou = n-1;}
  console.log(`tou is ${tou}`);
         
-        setusedate((prev)=>{return{...prev,[month]:tou}});
+        setusedate((prev)=>{return{...prev,["month"]:tou}});
  console.log(`usedate.month is ${usedate.month}`);
         
     }
@@ -35,15 +35,17 @@ function month(i){
 
 }
   return (
-    <div>
-      <nav><img src="" alt="calenderimage"/>
-      <div>Calender pick up/drop</div></nav>
-        <div>{date.getUTCFullYear()}<div>{date.getDate()}</div></div>
-        <button onClick={()=>changemonth("decrease",usedate.month)}>left</button>
-        <div>{date.getDate}   {month(usedate.month)}</div>
-        <button onClick={()=>changemonth("increase",usedate.month)}>right</button>
-        <button>go to today</button>
-        <input type="date"></input>
+    <div className='flex flex-col justify-center'>
+      <nav className='bg-yellow-300'><img src="" alt="calenderimage"/>
+      <div className='text-[20px] text-bold'>Calender pick up/drop</div></nav>
+        <div className='flex flex-col justify-center text-[1.5rem] bold'>{date.getUTCFullYear()}<br/><span>{date.getDate()}</span>
+        </div>
+        <div className='flex flex-col justify-center relative  left-[40%]'>
+        <button className='border-[2px]  m-[5px] p-[2px]  bg-yellow-500 w-[100px]' onClick={()=>changemonth("decrease",usedate.month)}>left</button>
+        <div className='relative left-[2.2%] text-[1.5rem] bold'>{date.getDate}   {month(usedate.month)}</div>
+        <button className='border-[2px] m-[5px] p-[2px]  bg-yellow-500 w-[100px]' onClick={()=>changemonth("increase",usedate.month)}>right</button>
+        <button className='border-[2px] m-[5px] p-[2px]  bg-yellow-500 w-[120px]'>go to today</button>
+        <input type="date" className=' w-[120px] text-[2rem]'></input></div>
     </div>
   )
 }

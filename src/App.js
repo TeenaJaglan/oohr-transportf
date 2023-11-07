@@ -23,7 +23,7 @@ export default function App() {
    <div className='navbar'>
     <Routes>
       <Route path="/Nav3" element={<Nav3></Nav3>}/>
-      <Route path="/" element={<Navbar loggedin={loggedin} setloggedin={setloggedin}/>}/>
+      
     </Routes>
     <Navbar loggedin={loggedin} setloggedin={setloggedin}/>
 

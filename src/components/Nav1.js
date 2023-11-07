@@ -5,7 +5,7 @@ import {FaLocationDot} from 'react-icons/fa6';
 export default function Nav1() {
   return (
     <div>
-      <nav className=" bg-orange-600 ">
+      <nav className=" bg-orange-600 w-screen">
         <div classname="flex flex-row">
         <span><MdOutlineSubject/></span>
         <span><FaRegBell/></span>
