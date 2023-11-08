@@ -35,17 +35,18 @@ function month(i){
 
 }
   return (
-    <div className='flex flex-col justify-center'>
-      <nav className='bg-yellow-300'><img src="" alt="calenderimage"/>
-      <div className='text-[20px] text-bold'>Calender pick up/drop</div></nav>
-        <div className='flex flex-col justify-center text-[1.5rem] bold'>{date.getUTCFullYear()}<br/><span>{date.getDate()}</span>
+    <div className='flex flex-col justify-center mt-[5px]'>
+      <nav className=' bg-yellow-300 flex flex-row '><img src="" width="100px" height="100px" className='border-[2px]   borderbg-red-900 mx-[6px]' alt="image"/>
+      <div className='text-[20px] text-bold relative top-[20px]'>Calender pick up/drop</div></nav>
+      <div className='flex flex-col   mt-[5rem] items-center '>
+        <div className='flex flex-col justify-center  mt-[10px] text-[1.5rem] bold items-center '>{date.getUTCFullYear()}<br/><span>{date.getDate()}</span>
         </div>
-        <div className='flex flex-col justify-center relative  left-[40%]'>
+        <div className='flex flex-col justify-center relative items-center '>
         <button className='border-[2px]  m-[5px] p-[2px]  bg-yellow-500 w-[100px]' onClick={()=>changemonth("decrease",usedate.month)}>left</button>
-        <div className='relative left-[2.2%] text-[1.5rem] bold'>{date.getDate}   {month(usedate.month)}</div>
+        <div className='relative items-center  text-[1.5rem] bold'>{date.getDate}   {month(usedate.month)}</div>
         <button className='border-[2px] m-[5px] p-[2px]  bg-yellow-500 w-[100px]' onClick={()=>changemonth("increase",usedate.month)}>right</button>
         <button className='border-[2px] m-[5px] p-[2px]  bg-yellow-500 w-[120px]'>go to today</button>
-        <input type="date" className=' w-[120px] text-[2rem]'></input></div>
+        <input type="date" className=' w-[120px] text-[2rem]'></input></div></div>
     </div>
   )
 }

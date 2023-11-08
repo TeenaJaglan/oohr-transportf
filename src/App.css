@@ -1,16 +1,1 @@
-.navbar{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  
-  height:20vh;
-background-color:orange;
-}
-.options{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-  
-  width:43vw;
-}
+

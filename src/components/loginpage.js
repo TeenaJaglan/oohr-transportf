@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
-import 'react-toastify/dist/ReactToastify.css'
+import { Link } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import Navbar from './Navbar.js'
 import {AiOutlineEyeInvisible,AiOutlineEye} from 'react-icons/ai';
 export default function Loginpage({loggedin,setloggedin}) {
   const nav = useNavigate();
@@ -25,7 +27,8 @@ toast.success("Logged in");
 setloggedin(true);
 nav("/dashboard");
     }
-  return (
+  return (<>
+ <Navbar></Navbar>
     <div className="flex flex-col justify-center  align-center p-5">
         <div className=" text-[1.5rem]  my-[6vh] m-auto relative flex flex-col justify-center bg-green-400 p-[10px]">
       <fieldset >
@@ -60,5 +63,6 @@ nav("/dashboard");
       <div>
       <button className=" border-[2px] m-[5px] border-black w-[13rem]">Facebook</button></div></div>
     </div>
+    </>
   )
 }

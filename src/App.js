@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import './App.css';
 import Pickup from './components/Pickup.js';
+import PrivateRoute from './components/PrivateRoute.js';
 import {Routes,Route,Link} from 'react-router-dom';
 import Dashboard from './components/Dashboard.js';
 import School from './components/School.js'
@@ -22,10 +23,13 @@ export default function App() {
   return (<div>
    <div className='navbar'>
     <Routes>
-      <Route path="/Nav3" element={<Nav3></Nav3>}/>
+      <Route path="/"  element={<Navbar loggedin={loggedin} setloggedin={setloggedin}/>}/>
+      <Route  element={<Nav3></Nav3>}/>
+      
+      <Route path="/Nav1" element={<Nav1></Nav1>}/>
       
     </Routes>
-    <Navbar loggedin={loggedin} setloggedin={setloggedin}/>
+   
 
     </div>
     <div className='components'>
@@ -33,7 +37,11 @@ export default function App() {
      
 <Route path ="/loginpage" element={<Loginpage loggedin={loggedin} setloggedin={setloggedin} ></Loginpage>}></Route>
 <Route path ="/signuppage" element={<Signuppage loggedin={loggedin} setloggedin={setloggedin} ></Signuppage>}></Route>
-<Route path ="/dashboard" element={<Dashboard></Dashboard>}>
+
+<Route path ="/dashboard" element={
+<PrivateRoute loggedin={loggedin}>
+<Dashboard></Dashboard>
+</PrivateRoute>}>
 
  <Route path="/dashboard/school" element={<School></School>}></Route> 
  <Route path="/dashboard/transport" element={<Transport></Transport>}></Route> 
